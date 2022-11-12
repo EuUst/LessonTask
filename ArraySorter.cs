@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LessonTask
+﻿namespace LessonTask
 {
-    internal class ArraySorter
+    class ArraySorter
     {
         public static string[][] GetArrayContinent(string[] array, string continent)
         {
