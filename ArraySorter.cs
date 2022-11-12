@@ -2,7 +2,7 @@
 {
     class ArraySorter
     {
-        public static string[][] GetArrayContinent(string[] array, string continent)
+        public static string[][] GetContitentArray(string[] array, string continent)
         {
             var list = new List<string[]>();
             foreach (string line in array)
@@ -14,7 +14,7 @@
             return list.ToArray();
         }
 
-        public static string[] GetSortedByContitent(string[][] linesOfProps)
+        public static string[] SortByContinent(string[][] linesOfProps)
         {
             var sortedArray = new List<string>();
             for (int i = 0; i < linesOfProps.Length; i++)
@@ -44,6 +44,22 @@
         {
             List<string> orderedList = listToSort.OrderBy(p => p).ToList();
             return orderedList;
+        }
+
+        public static List<string> ChooseCountryByLetter(char letter, string[] contriesFile)
+        {
+            List<string> chosenRows = new List<string>();
+
+            for (int i = 1; i < contriesFile.Length; i++)
+            {
+                string[] elements = contriesFile[i].Split(";");
+                if (elements[1].ToUpper().StartsWith(letter.ToString().ToUpper()))
+                {
+                    chosenRows.Add(contriesFile[i]);
+                }
+            }
+
+            return chosenRows;
         }
     }
 }

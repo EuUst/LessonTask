@@ -22,7 +22,7 @@ namespace LessonTask
             string continent = InputWork.GetContinentInput();
             string firstChooseName = InputWork.GetFileNameInput();
 
-            List<string> sortedArray = ArraySorter.GetSortedByContitent(ArraySorter.GetArrayContinent(fileLines, continent)).ToList();
+            List<string> sortedArray = ArraySorter.SortByContinent(ArraySorter.GetContitentArray(fileLines, continent)).ToList();
             
             InsertColumns(sortedArray, columns);
             FileCreator.CreateFile(firstChooseName, sortedArray.ToArray(), repositoryPath);
@@ -34,7 +34,7 @@ namespace LessonTask
             char inputLetter = InputWork.GetLetterInput();
             string chooseFileName = InputWork.GetFileNameInput();
 
-            List<string> chosenRows = ChooseCountryByLetter(inputLetter, fileLines);
+            List<string> chosenRows = ArraySorter.ChooseCountryByLetter(inputLetter, fileLines);
 
             chosenRows = ArraySorter.SortByAlphabet(chosenRows);
 
@@ -45,22 +45,6 @@ namespace LessonTask
         public static void InsertColumns(List<string> listToInsert, string columns)
         {
             listToInsert.Insert(0, columns);
-        }
-
-        public static List<string> ChooseCountryByLetter(char letter, string[] contriesFile)
-        {
-            List<string> chosenRows = new List<string>();
-
-            for (int i = 1; i < contriesFile.Length; i++)
-            {
-                string[] elements = contriesFile[i].Split(";");
-                if (elements[1].ToUpper().StartsWith(letter.ToString().ToUpper()))
-                {
-                    chosenRows.Add(contriesFile[i]);
-                }
-            }
-
-            return chosenRows;
-        }  
+        } 
     }
 }
