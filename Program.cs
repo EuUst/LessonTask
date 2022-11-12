@@ -16,7 +16,13 @@
             foreach(string r in chosenRows)
             {
                 Console.WriteLine(r);
-            } 
+            }
+            Console.WriteLine();
+            chosenRows = SortByAlphabet(chosenRows);
+            foreach(string r in chosenRows)
+            {
+                Console.WriteLine(r);
+            }
         }
 
         public static char GetLetterInput()
@@ -36,6 +42,7 @@
                 }     
             }          
         }
+
         public static List<string> ChooseCountryByLetter(char letter, string[] contriesFile)
         {
             List<string> chosenRows = new List<string>();
@@ -50,6 +57,12 @@
             }
 
             return chosenRows;
+        }
+
+        public static List<string> SortByAlphabet(List<string> listToSort)
+        {
+            List<string> orderedList = listToSort.OrderBy(p => p).ToList();
+            return orderedList;
         }
     }
 }
