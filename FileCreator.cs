@@ -1,14 +1,9 @@
-﻿using System;
-using System.IO;
-
-namespace LessonTask
+﻿namespace LessonTask
 {
-    internal class FileCreator
+    class FileCreator
     {
-        public static void CreateFile(string[] allLines)
+        public static void CreateFile(string nameFile, string[] allLines)
         {
-            Console.Write("Введите название файла: ");
-            string nameFile = Console.ReadLine();
             nameFile += ".txt";
 
             File.WriteAllLines(nameFile, allLines);
