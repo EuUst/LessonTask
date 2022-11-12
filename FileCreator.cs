@@ -2,11 +2,12 @@
 {
     class FileCreator
     {
-        public static void CreateFile(string nameFile, string[] allLines)
+        public static void CreateFile(string nameFile, string[] allLines, string path)
         {
             nameFile += ".txt";
+            path = Path.Combine(path, nameFile);
 
-            File.WriteAllLines(nameFile, allLines);
+            File.WriteAllLines(path, allLines);
         }
     }
 }

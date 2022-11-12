@@ -7,9 +7,8 @@ namespace LessonTask
         static void Main(string[] args)
         {
             //Временно оставлю так, если что - потом на норм путь заменю. Для тестов сгодится.
-            string[] contriesFile = File.ReadAllLines(@"C:\Users\79681\source\repos\LessonTask\countrey.txt");
-
-            string columns = contriesFile[0];
+            string repositoryPath = Directory.GetCurrentDirectory().ToString() + "\\LessonTask";
+            string[] contriesFile = File.ReadAllLines(Path.Combine(repositoryPath, "countrey.txt"));
 
             char inputLetter = GetLetterInput();
 
