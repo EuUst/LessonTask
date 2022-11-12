@@ -39,5 +39,11 @@
 
             return sortedArray.ToArray();
         }
+
+        public static List<string> SortByAlphabet(List<string> listToSort)
+        {
+            List<string> orderedList = listToSort.OrderBy(p => p).ToList();
+            return orderedList;
+        }
     }
 }

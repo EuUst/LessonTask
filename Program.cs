@@ -15,7 +15,6 @@ namespace LessonTask
             GetChoseByContentAndPopulation(columns, fileLines, repositoryPath);
 
             GetCapitalsChoseByChar(columns, fileLines, repositoryPath);
-            
         }
 
         public static void GetChoseByContentAndPopulation(string columns, string[] fileLines, string repositoryPath)
@@ -37,7 +36,7 @@ namespace LessonTask
 
             List<string> chosenRows = ChooseCountryByLetter(inputLetter, fileLines);
 
-            chosenRows = SortByAlphabet(chosenRows);
+            chosenRows = ArraySorter.SortByAlphabet(chosenRows);
 
             InsertColumns(chosenRows, columns);
             FileCreator.CreateFile(chooseFileName, chosenRows.ToArray(), repositoryPath);
@@ -62,12 +61,6 @@ namespace LessonTask
             }
 
             return chosenRows;
-        }
-
-        public static List<string> SortByAlphabet(List<string> listToSort)
-        {
-            List<string> orderedList = listToSort.OrderBy(p => p).ToList();
-            return orderedList;
-        }
+        }  
     }
 }
