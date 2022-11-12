@@ -6,8 +6,7 @@ namespace LessonTask
     {
         static void Main(string[] args)
         {
-            string[] array = new string[] { "First Line", "Second Line" };
-            FileCreator.CreateFile(array);
+            
         }
     }
 }

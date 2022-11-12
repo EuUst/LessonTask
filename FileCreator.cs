@@ -11,7 +11,6 @@ namespace LessonTask
             string nameFile = Console.ReadLine();
             nameFile += ".txt";
 
-            File.Create(nameFile);
             File.WriteAllLines(nameFile, allLines);
         }
     }
