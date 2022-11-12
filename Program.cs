@@ -1,4 +1,6 @@
-﻿namespace LessonTask
+﻿using System.Reflection.PortableExecutable;
+
+namespace LessonTask
 {
     internal class Program
     {
