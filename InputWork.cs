@@ -4,7 +4,7 @@
     {
         public static string GetFileNameInput()
         {
-            Console.WriteLine("Введите нащвание файла, куда бы хотели записать результат выборки");
+            Console.WriteLine("Введите название файла, куда бы хотели записать результат выборки");
             string fileName = Console.ReadLine();
             return fileName;
         }
@@ -35,7 +35,7 @@
         {
             while (true)
             {
-                Console.WriteLine("Введите первую букву столи");
+                Console.WriteLine("Введите первую букву столицы");
                 string input = Console.ReadLine();
 
                 if (char.TryParse(input, out char result) && Char.IsLetter(result))

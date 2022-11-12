@@ -14,7 +14,7 @@
             return list.ToArray();
         }
 
-        public static string[] GetSortedArray(string[][] linesOfProps)
+        public static string[] GetSortedByContitent(string[][] linesOfProps)
         {
             var sortedArray = new List<string>();
             for (int i = 0; i < linesOfProps.Length; i++)

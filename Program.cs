@@ -22,7 +22,7 @@ namespace LessonTask
             string continent = InputWork.GetContinentInput();
             string firstChooseName = InputWork.GetFileNameInput();
 
-            List<string> sortedArray = ArraySorter.GetSortedArray(ArraySorter.GetArrayContinent(fileLines, continent)).ToList();
+            List<string> sortedArray = ArraySorter.GetSortedByContitent(ArraySorter.GetArrayContinent(fileLines, continent)).ToList();
             
             InsertColumns(sortedArray, columns);
             FileCreator.CreateFile(firstChooseName, sortedArray.ToArray(), repositoryPath);
