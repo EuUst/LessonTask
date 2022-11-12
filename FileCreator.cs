@@ -5,14 +5,14 @@ namespace LessonTask
 {
     internal class FileCreator
     {
-        public static void CreateFile(string firstLine)
+        public static void CreateFile(string[] allLines)
         {
             Console.Write("Введите название файла: ");
-            string name = Console.ReadLine();
+            string nameFile = Console.ReadLine();
+            nameFile += ".txt";
 
-            StreamWriter file = new StreamWriter(name + ".txt");
-            file.Write(firstLine);
-            file.Close();
+            File.Create(nameFile);
+            File.WriteAllLines(nameFile, allLines);
         }
     }
 }
